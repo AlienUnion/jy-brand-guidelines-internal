@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="眾悅 Brand Guidelines 內部互動版">
+  <meta name="robots" content="noindex,nofollow,noarchive">
+  <title>字體系統｜眾悅 Brand Guidelines</title>
+  <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+<body>
+<a class="skip-link" href="#mainContent">跳到主要內容</a>
+<div class="app-shell">
+  <aside class="sidebar" aria-label="主要導覽">
+    <div class="brand-panel">
+      <img src="../assets/logo/JY_logo_full_h_primary.svg" alt="眾悅車品">
+      <div class="brand-kicker">Internal Brand System</div>
+      <p class="brand-title">Brand Guidelines<br>內部互動版</p>
+      <span class="status-badge">Internal Beta · v0.1.0</span>
+    </div>
+    <div class="side-search"><button class="search-button" data-open-search><span>搜尋規則與資產</span><kbd>/</kbd></button></div>
+    <nav class="nav-scroll"><div class="nav-group"><p class="nav-label">快速入口</p><a class="nav-link" href="../index.html"><span>首頁</span></a><a class="nav-link" href="../pages/checks.html"><span>快速檢核</span></a><a class="nav-link" href="../pages/resources.html"><span>資產中心</span></a></div><div class="nav-group"><p class="nav-label">母法八章</p><a class="nav-link" href="../pages/constitution.html"><span class="nav-num">01</span><span>品牌憲法</span></a><a class="nav-link" href="../pages/voice.html"><span class="nav-num">02</span><span>語氣系統</span></a><a class="nav-link" href="../pages/color.html"><span class="nav-num">03</span><span>色彩系統</span></a><a class="nav-link active" href="../pages/typography.html"><span class="nav-num">04</span><span>字體系統</span></a><a class="nav-link" href="../pages/grid.html"><span class="nav-num">05</span><span>版面網格</span></a><a class="nav-link" href="../pages/logo.html"><span class="nav-num">06</span><span>Logo 使用規則</span></a><a class="nav-link" href="../pages/iconography.html"><span class="nav-num">07</span><span>圖示與圖形語彙</span></a><a class="nav-link" href="../pages/imagery.html"><span class="nav-num">08</span><span>影像風格</span></a></div><div class="nav-group"><p class="nav-label">治理</p><a class="nav-link" href="../pages/status.html"><span>狀態與版本</span></a><a class="nav-link" href="../pages/methodology.html"><span>共用方法論</span></a><a class="nav-link" href="../pages/changelog.html"><span>更新紀錄</span></a></div></nav>
+    <div class="sidebar-footer">B02 品牌策略部<br>更新：2026/07/13</div>
+  </aside>
+  <div class="mobile-overlay" data-menu-close></div>
+  <main class="main" id="mainContent">
+    <header class="topbar">
+      <div><button class="icon-button menu-button" data-menu-toggle aria-label="開啟導覽">☰</button> <span class="breadcrumb">母法八章 / 字體系統</span></div>
+      <div class="top-actions">
+        <button class="icon-button hide-mobile" data-open-search>搜尋</button>
+        <button class="icon-button" data-print>列印</button>
+      </div>
+    </header>
+    <div class="page"><div class="page-grid"><article class="article"><div class="page-kicker">母法第 4 章 · Typography</div>
+<h1>字體系統</h1>
+<p class="lead">中英文共用 IBM Plex Sans TC，以單一家族、完整字重與明確層級降低執行差異。</p>
+<div class="meta-row"><span><strong>版本</strong> v1.0</span><span><strong>狀態</strong> 完成</span><span><strong>負責</strong> B02 品牌策略部</span></div><section class="quick-panel"><h2>30 秒快速使用</h2><div class="quick-grid"><div class="quick-item"><strong>唯一字體</strong><p>除 Plex 家族外不引入第二套字體。</p></div><div class="quick-item"><strong>主標做法</strong><p>Bold＋4–6 字＋字距微收；禁止水平壓縮。</p></div><div class="quick-item"><strong>內文規則</strong><p>Regular／Text 為主，中文行距至少 1.6 倍。</p></div></div></section><section aria-labelledby="typeTool"><h2 id="typeTool">字體即時試排</h2>
+<div class="notice info"><div><strong>顯示說明</strong>網站指定 IBM Plex Sans TC；未安裝的電腦會使用系統後備字體。這不改變規範指定字體。</div></div>
+<div class="control-panel">
+  <div class="control-row">
+    <div class="control" style="flex:1"><label for="typeText">試排文字</label><input id="typeText" value="先幫你懂，再讓你買。JY 2026"></div>
+    <div class="control"><label for="typeWeight">字重</label><select id="typeWeight"><option value="400">Regular 400</option><option value="450">Text 450</option><option value="500">Medium 500</option><option value="600">SemiBold 600</option><option value="700" selected>Bold 700</option></select></div>
+    <div class="control"><label for="typeSize">字級 <span id="typeSizeValue"></span></label><input id="typeSize" type="range" min="16" max="96" value="42"></div>
+  </div>
+  <div class="preview-box type-preview" id="typePreview"></div>
+</div></section><div class="content"><h2 id="section-1">一、選型（已鎖定）</h2>
+<p>中英文共用單一家族：<strong>IBM Plex Sans TC</strong>（SIL OFL 開源、免費商用與嵌入、8 字重、繁中約 29,500 字符、中英同源）。硬規則：除 Plex 家族外不引入第二套字體；等寬數字感或純拉丁窄體需求只在 Plex 家族內取用（Plex Mono、Plex Sans Condensed——後者僅拉丁）。</p>
+<h2 id="section-2">二、字重清單與角色</h2>
+<p>家族最重為 Bold（700），無 Black——主標力量上限是 Bold，靠字級、字距與字數經濟補，不硬加重。</p>
+<table>
+<thead>
+<tr>
+<th>字重</th>
+<th>數值</th>
+<th>角色</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Thin / ExtraLight</td>
+<td>100 / 200</td>
+<td>禁用於內文與小字，僅大尺寸裝飾</td>
+</tr>
+<tr>
+<td>Light</td>
+<td>300</td>
+<td>大標輕量變體，謹慎使用</td>
+</tr>
+<tr>
+<td>Regular</td>
+<td>400</td>
+<td>內文主力</td>
+</tr>
+<tr>
+<td>Text</td>
+<td>450</td>
+<td>小尺寸內文（縮圖內文建議用它）</td>
+</tr>
+<tr>
+<td>Medium</td>
+<td>500</td>
+<td>小標、強調</td>
+</tr>
+<tr>
+<td>SemiBold</td>
+<td>600</td>
+<td>副標、標籤、按鈕</td>
+</tr>
+<tr>
+<td>Bold</td>
+<td>700</td>
+<td>主標、封面、規格數字強調</td>
+</tr>
+</tbody>
+</table>
+<h2 id="section-3">三、字級層級（比例制；實際像素由各應用子法換算）</h2>
+<table>
+<thead>
+<tr>
+<th>層級</th>
+<th>字重</th>
+<th>相對基準</th>
+<th>行距</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>H1 主標</td>
+<td>Bold</td>
+<td>×2.25</td>
+<td>1.15</td>
+</tr>
+<tr>
+<td>H2 副標</td>
+<td>SemiBold</td>
+<td>×1.6</td>
+<td>1.25</td>
+</tr>
+<tr>
+<td>H3 小標</td>
+<td>Medium</td>
+<td>×1.25</td>
+<td>1.4</td>
+</tr>
+<tr>
+<td>Body 內文</td>
+<td>Regular / Text</td>
+<td>×1.0</td>
+<td>1.7</td>
+</tr>
+<tr>
+<td>Caption 註記</td>
+<td>Regular</td>
+<td>×0.85</td>
+<td>1.6</td>
+</tr>
+<tr>
+<td>Label 標籤</td>
+<td>SemiBold</td>
+<td>×0.8</td>
+<td>1.2</td>
+</tr>
+</tbody>
+</table>
+<p>中文內文行距一律 1.6 起；標題收至 1.1–1.25。行距取 4 的倍數以對齊 8pt 基線（與網格章咬合）。</p>
+<h2 id="section-4">四、中英混排規則</h2>
+<p>同家族基線自動對齊；規格與價格數字啟用等寬數字（tabular figures）；中英之間、數字與中文之間加四分之一空格視覺間距；英文全大寫字距 +2%～+4%；中文不使用全形英文字母。</p>
+<h2 id="section-5">五、緊湊主標處理（中文無窄體）</h2>
+<p>字重 Bold＋字距 -2%～-4%＋字數經濟（主標 4–6 字、放大字級）。嚴禁水平壓縮或垂直拉長字體。純英文主標可用 Plex Sans Condensed。</p>
+<h2 id="section-6">六、與色彩章交叉紅線</h2>
+<p>深階鋼青 #0E6A75 排內文字重不低於 Regular；亮階鋼青維持禁止排字；萊姆綠標籤上的字 SemiBold 以上＋墨黑。</p>
+<h2 id="section-7">七、禁區</h2>
+<p>中文斜體禁用（機械傾斜）；字體縮放變形禁用；Thin／ExtraLight 禁用於內文與小於 H2 的文字；主標超字數先砍字不縮字；非 Plex 字體混入即不合格。</p>
+<h2 id="section-8">八、驗收標準</h2>
+<p>送審掃描三項（無外來字體、無變形、無中文斜體）通過率 100%。最小顯示尺寸實測（實際尺寸由各應用子法定義）：H1 主標與規格數字清楚可辨。落地前確認團隊工具內可取用 Plex Sans TC（TC 子家族較新，可能需自官方 GitHub 下載安裝，免費合法）。</p>
+</div></article><aside class="toc"><div class="toc-title">本頁目錄</div><a class="toc-h2" href="#section-1">一、選型（已鎖定）</a><a class="toc-h2" href="#section-2">二、字重清單與角色</a><a class="toc-h2" href="#section-3">三、字級層級（比例制；實際像素由各應用子法換算）</a><a class="toc-h2" href="#section-4">四、中英混排規則</a><a class="toc-h2" href="#section-5">五、緊湊主標處理（中文無窄體）</a><a class="toc-h2" href="#section-6">六、與色彩章交叉紅線</a><a class="toc-h2" href="#section-7">七、禁區</a><a class="toc-h2" href="#section-8">八、驗收標準</a></aside></div></div>
+  </main>
+</div>
+<div class="search-modal" id="searchModal" aria-hidden="true" role="dialog" aria-modal="true" aria-label="全站搜尋">
+  <div class="search-dialog">
+    <div class="search-head"><input id="globalSearch" type="search" placeholder="搜尋：安全區、萊姆綠、主標、實證…"><button class="search-close" data-close-search aria-label="關閉">✕</button></div>
+    <div class="search-results" id="searchResults"><div class="empty-state">輸入章節、規則、色值或關鍵字</div></div>
+  </div>
+</div>
+<div class="toast" id="toast" aria-live="polite"></div>
+<script src="../assets/js/search-index.js"></script>
+<script src="../assets/js/app.js"></script>
+</body>
+</html>

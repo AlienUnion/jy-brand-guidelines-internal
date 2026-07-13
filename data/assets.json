@@ -1,0 +1,13 @@
+{
+  "logos": [
+    {"name":"橫式主色版","file":"JY_logo_full_h_primary.svg","type":"L2"},
+    {"name":"橫式單色版","file":"JY_logo_full_h_mono.svg","type":"L2"},
+    {"name":"橫式反白版","file":"JY_logo_full_h_reverse.svg","type":"L2"},
+    {"name":"直式主色版","file":"JY_logo_full_v_primary.svg","type":"L3"},
+    {"name":"直式單色版","file":"JY_logo_full_v_mono.svg","type":"L3"},
+    {"name":"直式反白版","file":"JY_logo_full_v_reverse.svg","type":"L3"},
+    {"name":"標記主色版","file":"JY_logo_mark_sq_primary.svg","type":"L5"},
+    {"name":"標記單色版","file":"JY_logo_mark_sq_mono.svg","type":"L5"},
+    {"name":"標記反白版","file":"JY_logo_mark_sq_reverse.svg","type":"L5"}
+  ]
+}

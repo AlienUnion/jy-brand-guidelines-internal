@@ -1,0 +1,10 @@
+{
+  "status": "optional",
+  "note": "缺少影像不阻擋系統上線；檔案加入後，影像章會自動以既定檔名顯示。",
+  "assets": [
+    {"file":"JY_img_identity_01.webp","track":"識別／產品軌","size":"1600x1200","status":"pending"},
+    {"file":"JY_img_identity_02.webp","track":"識別／產品軌","size":"1600x1200","status":"pending"},
+    {"file":"JY_img_evidence_01.webp","track":"實證／過程軌","size":"1600x1200","status":"pending"},
+    {"file":"JY_img_evidence_02.webp","track":"實證／過程軌","size":"1600x1200","status":"pending"}
+  ]
+}
