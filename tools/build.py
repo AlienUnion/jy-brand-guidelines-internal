@@ -47,6 +47,11 @@ PAGE_DEFS = [
             ("新品公式", "新事物＋驗證動作＋判斷結論，缺一即不合格。"),
             ("絕對紅線", "禁止永久、100%、最、假原廠、療效式或無法證明的宣稱。"),
         ],
+        "dodont": [
+            ("寫「永久防刮、100% 防護、全網最強」", "寫「提升日常防護、適用〔車型年份〕、非原廠相容」"),
+            ("只喊「2026 最新爆款、全網瘋搶」", "用三元素：新事物＋我們的驗證動作＋判斷結論"),
+            ("形容詞堆疊，讓重點被稀釋", "規格先行、一句到位，先幫判斷再成交"),
+        ],
     },
     {
         "slug": "color",
@@ -62,6 +67,11 @@ PAGE_DEFS = [
             ("文字安全", "內文使用墨黑、石墨或深階鋼青；亮階鋼青禁止排文字。"),
             ("訊號色", "萊姆綠只當底，不當字，不作大面積背景。"),
         ],
+        "dodont": [
+            ("白字壓亮階鋼青 #1AA6B7（2.92:1，看不清）", "白字壓深階鋼青 #0E6A75（6.29:1）作按鈕／標籤"),
+            ("萊姆綠當文字（任何底皆永久禁用）", "萊姆綠只當訊號底，上面壓墨黑或深階鋼青字"),
+            ("萊姆綠大面積鋪底或當主色塊", "中性約 75%、鋼青約 20%、萊姆綠低於 5%"),
+        ],
     },
     {
         "slug": "typography",
@@ -76,6 +86,11 @@ PAGE_DEFS = [
             ("唯一字體", "除 Plex 家族外不引入第二套字體。"),
             ("主標做法", "Bold＋4–6 字＋字距微收；禁止水平壓縮。"),
             ("內文規則", "Regular／Text 為主，中文行距至少 1.6 倍。"),
+        ],
+        "dodont": [
+            ("水平壓縮或垂直拉長字體", "主標超長先砍字（4–6 字）＋字距微收"),
+            ("使用中文機械斜體", "用字重與字級建立層級，不靠傾斜"),
+            ("混入 Plex 以外的第二套字體", "中英共用 IBM Plex Sans TC 單一家族"),
         ],
     },
     {
@@ -106,6 +121,11 @@ PAGE_DEFS = [
             ("必要狀態", "完整版、標記版、單色版、反白版。"),
             ("安全區", "以中文字面高度 x 為單位，四邊至少 1x。"),
             ("禁止", "不可變形、改色、加效果、重繪或低於最小辨識門檻。"),
+        ],
+        "dodont": [
+            ("改色、套漸層或自訂色", "只用主色（亮階鋼青）／單色（墨黑）／反白三版"),
+            ("變形、傾斜、非等比縮放", "使用官方 SVG，四狀態齊全，不重繪"),
+            ("低於最小尺寸或讓元素侵入安全區", "安全區 ≥ 1x 字高，依變體守最小尺寸"),
         ],
     },
     {
@@ -243,6 +263,12 @@ def render_md(path: Path):
         heading_id = f"section-{counter}"
         heading["id"] = heading_id
         toc.append((heading.name, heading_id, heading.get_text(" ", strip=True)))
+        anchor = soup.new_tag("a", href=f"#{heading_id}")
+        anchor["class"] = "heading-anchor"
+        anchor["data-anchor"] = ""
+        anchor["aria-label"] = "複製此節連結"
+        anchor.string = "#"
+        heading.append(anchor)
     return raw, str(soup), toc
 
 
@@ -258,6 +284,29 @@ def toc_html(items):
 def quick_panel(items):
     blocks = "".join(f'<div class="quick-item"><strong>{escape(title)}</strong><p>{escape(text)}</p></div>' for title, text in items)
     return f'<section class="quick-panel"><h2>30 秒快速使用</h2><div class="quick-grid">{blocks}</div></section>'
+
+
+def dodont_panel(items):
+    if not items:
+        return ""
+    rows = "".join(
+        f'''<div class="dodont-pair">
+<div class="dodont-card is-dont"><div class="dodont-tag">別這樣</div><p>{escape(dont)}</p></div>
+<div class="dodont-card is-do"><div class="dodont-tag">要這樣</div><p>{escape(do)}</p></div>
+</div>''' for dont, do in items)
+    return f'<section class="dodont" aria-labelledby="dodontHead"><h2 id="dodontHead">做對 vs 別做錯</h2><div class="dodont-grid">{rows}</div></section>'
+
+
+def pager(slug):
+    slugs = [p["slug"] for p in PAGE_DEFS]
+    if slug not in slugs:
+        return ""
+    i = slugs.index(slug)
+    prev_p = PAGE_DEFS[i - 1] if i > 0 else None
+    next_p = PAGE_DEFS[i + 1] if i < len(PAGE_DEFS) - 1 else None
+    left = (f'<a class="pager-link prev" href="{prev_p["slug"]}.html"><span class="pager-dir">← 上一章</span><span class="pager-title">{prev_p["num"]} {escape(prev_p["title"])}</span></a>' if prev_p else '<span></span>')
+    right = (f'<a class="pager-link next" href="{next_p["slug"]}.html"><span class="pager-dir">下一章 →</span><span class="pager-title">{next_p["num"]} {escape(next_p["title"])}</span></a>' if next_p else '<span></span>')
+    return f'<nav class="pager" aria-label="章節前後導覽">{left}{right}</nav>'
 
 
 def page_header(page):
@@ -336,7 +385,7 @@ def build_guideline_page(page):
     elif page["slug"] == "grid": tool = grid_tool()
     elif page["slug"] == "logo": tool = logo_tool()
     elif page["slug"] == "imagery": tool = imagery_placeholders()
-    inner = f'''<div class="page"><div class="page-grid"><article class="article">{page_header(page)}{quick_panel(page['quick'])}{tool}<div class="content">{html_content}</div></article>{toc_html(toc)}</div></div>'''
+    inner = f'''<div class="page"><div class="page-grid"><article class="article">{page_header(page)}{quick_panel(page['quick'])}{dodont_panel(page.get('dodont'))}{tool}<div class="content">{html_content}</div>{pager(page['slug'])}</article>{toc_html(toc)}</div></div>'''
     out = shell(active=page["slug"], title=page["title"], content=inner, breadcrumb=f"母法八章 / {page['title']}")
     (PAGES / f"{page['slug']}.html").write_text(out, encoding="utf-8")
     return raw

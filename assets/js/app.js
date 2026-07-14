@@ -140,4 +140,32 @@
   }
 
   document.querySelectorAll('[data-print]').forEach(el => el.addEventListener('click', () => window.print()));
+
+  // 搜尋結果鍵盤導覽（Linear / Stripe ⌘K 式）
+  let activeIndex = -1;
+  function resultEls() { return Array.from(results ? results.querySelectorAll('.search-result') : []); }
+  function setActive(idx) {
+    const els = resultEls();
+    if (!els.length) return;
+    activeIndex = (idx + els.length) % els.length;
+    els.forEach((el, i) => el.classList.toggle('is-active', i === activeIndex));
+    els[activeIndex].scrollIntoView({ block: 'nearest' });
+  }
+  if (searchInput) {
+    searchInput.addEventListener('input', () => { activeIndex = -1; });
+    searchInput.addEventListener('keydown', e => {
+      if (e.key === 'ArrowDown') { e.preventDefault(); setActive(activeIndex + 1); }
+      else if (e.key === 'ArrowUp') { e.preventDefault(); setActive(activeIndex - 1); }
+      else if (e.key === 'Enter') { const els = resultEls(); if (activeIndex >= 0 && els[activeIndex]) els[activeIndex].click(); }
+    });
+  }
+
+  // 標題錨點：點擊複製深層連結（Stripe / GitHub docs 式）
+  document.querySelectorAll('[data-anchor]').forEach(a => {
+    a.addEventListener('click', async () => {
+      const id = a.getAttribute('href');
+      const url = `${location.origin}${location.pathname}${id}`;
+      try { await navigator.clipboard.writeText(url); showToast('已複製此節連結'); } catch (_) {}
+    });
+  });
 })();

@@ -1,6 +1,6 @@
 /* ============================================================
    眾悅 Brand Guidelines · 內部互動版
-   優化版 v0.2 — Apple 空間/動態邏輯 × 眾悅克制紀律
+   優化版 v0.3 — 設計系統本事：DoDont對照、章節導覽、標題錨點、搜尋鍵盤導覽
    字型自架子集：IBM Plex Sans TC (400/500/600/700) + Mono
    ============================================================ */
 
@@ -308,3 +308,38 @@ code, kbd, .swatch span, .nav-num, [data-copy], .meta-row span { font-variant-nu
   body { font-size: 11pt; color: #000; }
   a { color: #000; text-decoration: none; }
 }
+
+/* ============================================================
+   v0.3 — 抽取自 Carbon/Polaris/Stripe/Linear 的設計系統本事
+   ============================================================ */
+
+/* ── Do / Don't 對照（Polaris/Atlassian 式） ── */
+.dodont { margin: 44px 0 8px; }
+.dodont h2 { font-size: 15px; letter-spacing: .06em; text-transform: uppercase; color: var(--teal-deep); margin: 0 0 16px; }
+.dodont-grid { display: grid; gap: 14px; }
+.dodont-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.dodont-card { border: 1px solid var(--hairline); border-top-width: 3px; border-radius: var(--radius); padding: 16px 18px; }
+.dodont-card p { margin: 0; font-size: 14px; line-height: 1.6; }
+.dodont-card.is-dont { border-top-color: var(--danger); background: #fff6f4; }
+.dodont-card.is-do { border-top-color: var(--teal-bright); background: var(--teal-wash); }
+.dodont-tag { font-size: 12px; font-weight: 700; letter-spacing: .04em; margin-bottom: 8px; display: inline-flex; align-items: center; gap: 6px; }
+.dodont-card.is-dont .dodont-tag { color: var(--danger); }
+.dodont-card.is-do .dodont-tag { color: var(--teal-deep); }
+.dodont-card.is-dont .dodont-tag::before { content: "✕"; }
+.dodont-card.is-do .dodont-tag::before { content: "✓"; }
+@media (max-width: 560px) { .dodont-pair { grid-template-columns: 1fr; } }
+
+/* ── 章節 Prev / Next（Stripe/Carbon docs 式） ── */
+.pager { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 76px 0 0; padding-top: 32px; border-top: 1px solid var(--hairline); }
+.pager-link { display: flex; flex-direction: column; gap: 4px; border: 1px solid var(--hairline); border-radius: var(--radius-lg); padding: 16px 20px; text-decoration: none; color: var(--ink); transition: border-color .2s var(--ease), box-shadow .2s var(--ease-out), transform .2s var(--ease-out); }
+.pager-link:hover { border-color: transparent; box-shadow: var(--shadow); color: var(--ink); transform: translateY(-2px); }
+.pager-link.next { text-align: right; }
+.pager-dir { font-size: 12px; color: var(--teal-deep); font-weight: 600; }
+.pager-title { font-size: 16px; font-weight: 600; }
+@media (max-width: 560px) { .pager { grid-template-columns: 1fr; } .pager-link.next { text-align: left; } }
+
+/* ── 標題錨點（Stripe/GitHub docs 式，hover 顯示） ── */
+.content h2, .content h3 { position: relative; }
+.heading-anchor { position: absolute; left: -1.05em; top: .06em; opacity: 0; text-decoration: none; color: var(--teal-core); font-weight: 400; padding-right: .35em; transition: opacity .15s var(--ease); }
+.content h2:hover .heading-anchor, .content h3:hover .heading-anchor, .heading-anchor:focus-visible { opacity: 1; }
+@media (max-width: 1180px) { .heading-anchor { position: static; opacity: .45; margin-left: .4em; left: auto; } }

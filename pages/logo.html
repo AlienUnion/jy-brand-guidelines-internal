@@ -38,7 +38,16 @@
     <div class="page"><div class="page-grid"><article class="article"><div class="page-kicker">母法第 6 章 · Logo Usage</div>
 <h1>Logo 使用規則</h1>
 <p class="lead">定義版式如何容納 Logo、何時切換變體、哪些操作絕對禁止；不反向定義 Logo 造型。</p>
-<div class="meta-row"><span><strong>版本</strong> v1.2</span><span><strong>狀態</strong> 介面契約完成</span><span><strong>負責</strong> B02 品牌策略部</span></div><section class="quick-panel"><h2>30 秒快速使用</h2><div class="quick-grid"><div class="quick-item"><strong>必要狀態</strong><p>完整版、標記版、單色版、反白版。</p></div><div class="quick-item"><strong>安全區</strong><p>以中文字面高度 x 為單位，四邊至少 1x。</p></div><div class="quick-item"><strong>禁止</strong><p>不可變形、改色、加效果、重繪或低於最小辨識門檻。</p></div></div></section><section aria-labelledby="logoTool"><h2 id="logoTool">Logo 預覽器</h2><p>此工具用於快速選擇正確資產與背景狀態，不取代最小尺寸與安全區條文。</p>
+<div class="meta-row"><span><strong>版本</strong> v1.2</span><span><strong>狀態</strong> 介面契約完成</span><span><strong>負責</strong> B02 品牌策略部</span></div><section class="quick-panel"><h2>30 秒快速使用</h2><div class="quick-grid"><div class="quick-item"><strong>必要狀態</strong><p>完整版、標記版、單色版、反白版。</p></div><div class="quick-item"><strong>安全區</strong><p>以中文字面高度 x 為單位，四邊至少 1x。</p></div><div class="quick-item"><strong>禁止</strong><p>不可變形、改色、加效果、重繪或低於最小辨識門檻。</p></div></div></section><section class="dodont" aria-labelledby="dodontHead"><h2 id="dodontHead">做對 vs 別做錯</h2><div class="dodont-grid"><div class="dodont-pair">
+<div class="dodont-card is-dont"><div class="dodont-tag">別這樣</div><p>改色、套漸層或自訂色</p></div>
+<div class="dodont-card is-do"><div class="dodont-tag">要這樣</div><p>只用主色（亮階鋼青）／單色（墨黑）／反白三版</p></div>
+</div><div class="dodont-pair">
+<div class="dodont-card is-dont"><div class="dodont-tag">別這樣</div><p>變形、傾斜、非等比縮放</p></div>
+<div class="dodont-card is-do"><div class="dodont-tag">要這樣</div><p>使用官方 SVG，四狀態齊全，不重繪</p></div>
+</div><div class="dodont-pair">
+<div class="dodont-card is-dont"><div class="dodont-tag">別這樣</div><p>低於最小尺寸或讓元素侵入安全區</p></div>
+<div class="dodont-card is-do"><div class="dodont-tag">要這樣</div><p>安全區 ≥ 1x 字高，依變體守最小尺寸</p></div>
+</div></div></section><section aria-labelledby="logoTool"><h2 id="logoTool">Logo 預覽器</h2><p>此工具用於快速選擇正確資產與背景狀態，不取代最小尺寸與安全區條文。</p>
 <div class="control-panel">
   <div class="control-row">
     <div class="control"><label for="logoAsset">資產</label><select id="logoAsset"><option value="JY_logo_full_h_primary.svg">橫式主色版</option><option value="JY_logo_full_h_mono.svg">橫式單色版</option><option value="JY_logo_full_h_reverse.svg">橫式反白版</option><option value="JY_logo_full_v_primary.svg">直式主色版</option><option value="JY_logo_full_v_mono.svg">直式單色版</option><option value="JY_logo_full_v_reverse.svg">直式反白版</option><option value="JY_logo_mark_sq_primary.svg">標記主色版</option><option value="JY_logo_mark_sq_mono.svg">標記單色版</option><option value="JY_logo_mark_sq_reverse.svg">標記反白版</option></select></div>
@@ -48,22 +57,22 @@
   <div class="preview-box logo-preview" id="logoPreview"><img id="logoImage" alt="Logo 預覽"></div>
   <p><a class="download-link" id="logoDownload" href="#" download>下載目前 SVG</a></p>
 </div></section><div class="content"><p>本章採用通用版 logo 使用框架（見通用 05），以下為眾悅落地參數與交叉紅線。<strong>本章定位為 logo 插槽介面契約，非 logo 造型手冊。</strong></p>
-<h2 id="section-1">零、狀態聲明</h2>
+<h2 id="section-1">零、狀態聲明<a aria-label="複製此節連結" class="heading-anchor" data-anchor="" href="#section-1">#</a></h2>
 <p>本次不改 logo 標記造型（見進度檔開放決策 3）。本章不描述、不規定現行 logo 造型，只定義「插槽必須提供什麼、對 logo 不得做什麼」。第二階段 logo 案啟動、logo 替換時，本章介面契約零修改，僅子法（logo 素材應用規範）隨新素材改版。</p>
-<h2 id="section-2">一、狀態版本清單（眾悅交付件）</h2>
+<h2 id="section-2">一、狀態版本清單（眾悅交付件）<a aria-label="複製此節連結" class="heading-anchor" data-anchor="" href="#section-2">#</a></h2>
 <p>眾悅 logo 須提供四狀態：完整版、標記版、單色版（墨黑 #1A1D21）、反白版（純白 #FFFFFF）。</p>
 <ul>
 <li>標記版切換：橫式完整版無法容納、或縮至完整版最小尺寸以下時，降用標記版。</li>
 <li>反白版用於深色底、影像上、鋼青底。</li>
 <li>字標定版註記（v1.2）：完整版之中文字標採「眾悅車品」四字、IBM Plex Sans TC Bold、tracking +100，定版後轉造型資產（見第五節）。此為子法 19 之資產顯示決策，本章介面契約不因此變動。</li>
 </ul>
-<h2 id="section-3">二、安全區與最小尺寸（相對單位）</h2>
+<h2 id="section-3">二、安全區與最小尺寸（相對單位）<a aria-label="複製此節連結" class="heading-anchor" data-anchor="" href="#section-3">#</a></h2>
 <ul>
 <li>安全區＝字面高度 x 為相對單位，四邊淨空 ≥ 1x（實際倍數由子法依版位定，對接需求中心 P 圖位）。</li>
 <li>單位制註記（v1.2）：安全區採 x＝中文字面高度（wordmark cap height，通用 08 單模數），四邊淨空 ≥ 1x。第一階段即統一 x 制（子法 19 同步），不再保留 X（標記高度）制之過渡。第二階段新 logo 定版時單位制不變，僅 clear space 倍數依新 wordmark 幾何重測。</li>
 <li>最小尺寸以縮圖辨識實測門檻定義（對接色彩章「真實銷售環境縮圖辨識測試」同一套實測），完整版與標記版各定門檻。母法不定死像素。</li>
 </ul>
-<h2 id="section-4">三、色彩交叉紅線（對接色彩系統 v1.0）</h2>
+<h2 id="section-4">三、色彩交叉紅線（對接色彩系統 v1.0）<a aria-label="複製此節連結" class="heading-anchor" data-anchor="" href="#section-4">#</a></h2>
 <table>
 <thead>
 <tr>
@@ -94,11 +103,11 @@
 </tr>
 </tbody>
 </table>
-<h2 id="section-5">四、插槽介面（對接版面網格 v1.0 第六節）</h2>
+<h2 id="section-5">四、插槽介面（對接版面網格 v1.0 第六節）<a aria-label="複製此節連結" class="heading-anchor" data-anchor="" href="#section-5">#</a></h2>
 <p>logo 插槽介面規格：佔用以模組為單位、安全區以 x 為相對單位、固定版位與佔用模組數由子法定（對接需求中心 P 圖位與 1:1 尺寸表）。網格章第六節「Logo 插槽」之待補連結，指向本章。</p>
-<h2 id="section-6">五、字體交叉紅線（對接字體系統 v1.0）</h2>
+<h2 id="section-6">五、字體交叉紅線（對接字體系統 v1.0）<a aria-label="複製此節連結" class="heading-anchor" data-anchor="" href="#section-6">#</a></h2>
 <p>現行 logo 若含字標，該字標為<strong>造型資產</strong>，不套用字體章 H1–Label 層級、行距、字重規則，亦不受色彩章「亮階鋼青禁止排文字」管轄——該禁區針對可讀內文，logo 字標以形狀記憶辨識，非逐字閱讀。第二階段新 logo 設計時，字標字體依品牌個性錨點（內行前輩）與 Plex 家族評估選定，但定版後同樣轉為造型資產，不回頭受字體章管轄。</p>
-<h2 id="section-7">六、誤用禁區（眾悅落地）</h2>
+<h2 id="section-7">六、誤用禁區（眾悅落地）<a aria-label="複製此節連結" class="heading-anchor" data-anchor="" href="#section-7">#</a></h2>
 <p>通用五類禁區全數適用；眾悅補強：</p>
 <ul>
 <li>不得為配合檔期改成促銷暖色或萊姆綠。</li>
@@ -106,11 +115,11 @@
 <li>不得置於高飽和暖色雜訊影像上而未加中性底或反白處理（眾悅主要銷售環境為高飽和暖色，logo 直貼易被吃掉）。</li>
 <li>不得低於縮圖辨識最小尺寸——這是眾悅品牌病灶（記不住）在 logo 層的直接防線。</li>
 </ul>
-<h2 id="section-8">七、下放子法清單</h2>
+<h2 id="section-8">七、下放子法清單<a aria-label="複製此節連結" class="heading-anchor" data-anchor="" href="#section-8">#</a></h2>
 <p>具體 clear-space 倍數、最小尺寸像素、誤用對照圖、各 P 圖位固定版位、通路遮擋安全區、logo 素材檔命名與圖層規範、AI 生圖與模板系統的 logo 引用方式——全部屬子法（logo 素材應用規範），第二階段換 logo 時隨新素材改版。</p>
-<h2 id="section-9">八、驗收標準</h2>
+<h2 id="section-9">八、驗收標準<a aria-label="複製此節連結" class="heading-anchor" data-anchor="" href="#section-9">#</a></h2>
 <p>送審掃描：四狀態齊全、無變形、無自訂色（僅亮階鋼青／墨黑／純白）、無萊姆綠或暖色入 logo、安全區未破——通過率 100%。落地實測：縮圖辨識最小尺寸通過、反白版於深色與鋼青底辨識通過、暖色雜訊底加底後辨識通過。可攜性驗收：第二階段換 logo 僅替換素材，本章零修改。</p>
-</div></article><aside class="toc"><div class="toc-title">本頁目錄</div><a class="toc-h2" href="#section-1">零、狀態聲明</a><a class="toc-h2" href="#section-2">一、狀態版本清單（眾悅交付件）</a><a class="toc-h2" href="#section-3">二、安全區與最小尺寸（相對單位）</a><a class="toc-h2" href="#section-4">三、色彩交叉紅線（對接色彩系統 v1.0）</a><a class="toc-h2" href="#section-5">四、插槽介面（對接版面網格 v1.0 第六節）</a><a class="toc-h2" href="#section-6">五、字體交叉紅線（對接字體系統 v1.0）</a><a class="toc-h2" href="#section-7">六、誤用禁區（眾悅落地）</a><a class="toc-h2" href="#section-8">七、下放子法清單</a><a class="toc-h2" href="#section-9">八、驗收標準</a></aside></div></div>
+</div><nav class="pager" aria-label="章節前後導覽"><a class="pager-link prev" href="grid.html"><span class="pager-dir">← 上一章</span><span class="pager-title">05 版面網格</span></a><a class="pager-link next" href="iconography.html"><span class="pager-dir">下一章 →</span><span class="pager-title">07 圖示與圖形語彙</span></a></nav></article><aside class="toc"><div class="toc-title">本頁目錄</div><a class="toc-h2" href="#section-1">零、狀態聲明</a><a class="toc-h2" href="#section-2">一、狀態版本清單（眾悅交付件）</a><a class="toc-h2" href="#section-3">二、安全區與最小尺寸（相對單位）</a><a class="toc-h2" href="#section-4">三、色彩交叉紅線（對接色彩系統 v1.0）</a><a class="toc-h2" href="#section-5">四、插槽介面（對接版面網格 v1.0 第六節）</a><a class="toc-h2" href="#section-6">五、字體交叉紅線（對接字體系統 v1.0）</a><a class="toc-h2" href="#section-7">六、誤用禁區（眾悅落地）</a><a class="toc-h2" href="#section-8">七、下放子法清單</a><a class="toc-h2" href="#section-9">八、驗收標準</a></aside></div></div>
   </main>
 </div>
 <div class="search-modal" id="searchModal" aria-hidden="true" role="dialog" aria-modal="true" aria-label="全站搜尋">
