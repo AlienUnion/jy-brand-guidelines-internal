@@ -185,7 +185,11 @@ def shell(*, active: str, title: str, content: str, is_root: bool = False, bread
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="眾悅 Brand Guidelines 內部互動版">
   <meta name="robots" content="noindex,nofollow,noarchive">
+  <meta name="theme-color" content="#1a1d21">
   <title>{escape(title)}｜眾悅 Brand Guidelines</title>
+  <link rel="icon" href="{prefix}assets/logo/JY_logo_mark_sq_primary.svg" type="image/svg+xml">
+  <link rel="preload" href="{prefix}assets/fonts/PlexSansTC-400.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="{prefix}assets/fonts/PlexSansTC-700.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="{prefix}assets/css/styles.css">
 </head>
 <body>
